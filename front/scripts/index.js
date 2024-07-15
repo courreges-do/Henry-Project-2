@@ -1,3 +1,4 @@
+/*
 const cardsContainer = document.querySelector("#cardsContainer")
 
 function jstoHtmlCards(elementJS){
@@ -24,3 +25,10 @@ function jstoHtmlCards(elementJS){
 const arrayHtmlCards = tempData.map(jstoHtmlCards)
 
 arrayHtmlCards.forEach( (elementHtml) => cardsContainer.appendChild(elementHtml))
+
+
+$.get("https://students-api.up.railway.app/movies", (data, status) => {
+    showAllCards(data);
+  });
+  
+  */
