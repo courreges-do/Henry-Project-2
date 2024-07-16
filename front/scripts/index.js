@@ -22,13 +22,16 @@ function jstoHtmlCards(elementJS){
     return div
 }
 
+esto hay que comentarlo dsp de escribir el get
+
 const arrayHtmlCards = tempData.map(jstoHtmlCards)
 
 arrayHtmlCards.forEach( (elementHtml) => cardsContainer.appendChild(elementHtml))
+esto...
 
-
-$.get("https://students-api.up.railway.app/movies", (data, status) => {
-    showAllCards(data);
+$.get("https://students-api.up.railway.app/movies", (response) => {
+    const arrayHtmlCards = response.map(jstoHtmlCards)
+    arrayHtmlCards.forEach((elementHtml)=> cardsContainer.appendChild(elementHtml))
   });
   
   */
