@@ -1,5 +1,3 @@
- console.log(tempData);
- 
  /*Selecciono el elemento del DOM con el id cardsContainer*/
 const cardsContainer = document.querySelector("#cardsContainer")
 
@@ -28,16 +26,15 @@ function jstoHtmlCards(elementJS){
     return div
 }
 
-
-const arrayHtmlCards = tempData.map(jstoHtmlCards)
-
-arrayHtmlCards.forEach( (elementHtml) => cardsContainer.appendChild(elementHtml))
-
-
-/*
-$.get("https://students-api.up.railway.app/movies", (response) => {
-    const arrayHtmlCards = response.map(jstoHtmlCards)
-    arrayHtmlCards.forEach((elementHtml)=> cardsContainer.appendChild(elementHtml))
-  });
   
-  */
+  $.get("https://students-api.up.railway.app/movies")
+  .done( (data)  => {
+    const arrayHtmlCards = data.map(jstoHtmlCards)
+    arrayHtmlCards.forEach((elementHtml)=> cardsContainer.appendChild(elementHtml))
+  })
+  .fail( () => {
+    alert("Error en la API")
+    const arrayHtmlCards = tempData.map(jstoHtmlCards)
+    arrayHtmlCards.forEach( (elementHtml) => cardsContainer.appendChild(elementHtml))
+  });
+ 
