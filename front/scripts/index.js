@@ -1,34 +1,40 @@
-/*
+ console.log(tempData);
+ 
+ /*Selecciono el elemento del DOM con el id cardsContainer*/
 const cardsContainer = document.querySelector("#cardsContainer")
 
+/*Creo una función para crear tarjetas HTML con 4 elementos*/
 function jstoHtmlCards(elementJS){
     const div = document.createElement("div")
     const h1 = document.createElement("h1")
     const button = document.createElement("button")
-    const image = document.createElement("image")
+    const img = document.createElement("img")
 
-    image.src =elementJS.poster
-    image.classList.add("cardImage")
-    image.alt = elementJS.title
+/*Configuro los atributos src y alt y le añado una clase a la imagen*/
+    img.src = elementJS.poster
+    img.classList.add("cardImage")
+    img.alt = elementJS.title
 
+/*Agrego el contenido del h1 y del botón*/
     h1.innerHTML = elementJS.title
     button.innerHTML = "Watch Now"
 
+/*Agrego la clase card al div y le appendeo o agrego la imagen, el título y el botón*/
     div.classList.add("card")
-    div.appendChild(image)
+    div.appendChild(img)
     div.appendChild(h1)
     div.appendChild(button)
 
     return div
 }
 
-esto hay que comentarlo dsp de escribir el get
 
 const arrayHtmlCards = tempData.map(jstoHtmlCards)
 
 arrayHtmlCards.forEach( (elementHtml) => cardsContainer.appendChild(elementHtml))
-esto...
 
+
+/*
 $.get("https://students-api.up.railway.app/movies", (response) => {
     const arrayHtmlCards = response.map(jstoHtmlCards)
     arrayHtmlCards.forEach((elementHtml)=> cardsContainer.appendChild(elementHtml))
