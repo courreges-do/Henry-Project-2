@@ -1,31 +1,8 @@
- /*Selecciono el elemento del DOM con el id cardsContainer*/
-const cardsContainer = document.querySelector("#cardsContainer")
+const jstoHtmlCards = require("./jstoHtmlCards");
 
-/*Creo una función para crear tarjetas HTML con 4 elementos*/
-function jstoHtmlCards(elementJS){
-    const div = document.createElement("div")
-    const h1 = document.createElement("h1")
-    const button = document.createElement("button")
-    const img = document.createElement("img")
-
-/*Configuro los atributos src y alt y le añado una clase a la imagen*/
-    img.src = elementJS.poster
-    img.classList.add("cardImage")
-    img.alt = elementJS.title
-
-/*Agrego el contenido del h1 y del botón*/
-    h1.innerHTML = elementJS.title
-    button.innerHTML = "Watch Now"
-
-/*Agrego la clase card al div y le appendeo o agrego la imagen, el título y el botón*/
-    div.classList.add("card")
-    div.appendChild(img)
-    div.appendChild(h1)
-    div.appendChild(button)
-
-    return div
-}
-
+/*Realizo una solicitud GET a una API para obtener datos de películas y, si tiene éxito, 
+genera y muestra tarjetas HTML con estos datos en un contenedor, 
+y si falla, muestra un mensaje de error y usa datos temporales para generar las tarjetas HTML*/
   
   $.get("https://students-api.up.railway.app/movies")
   .done( (data)  => {
