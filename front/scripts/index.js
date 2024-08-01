@@ -1,17 +1,24 @@
-const jstoHtmlCards = require("./jstoHtmlCards");
+const tempData = require("./tempData.js");
+const jstoHtmlCards = require("./jstoHtmlCards.js");
+const axios = require("axios");
 
-/*Realizo una solicitud GET a una API para obtener datos de películas y, si tiene éxito, 
-genera y muestra tarjetas HTML con estos datos en un contenedor, 
-y si falla, muestra un mensaje de error y usa datos temporales para generar las tarjetas HTML*/
-  
-  $.get("https://students-api.up.railway.app/movies")
-  .done( (data)  => {
+const cardsContainer = document.querySelector("#cardsContainer")
+
+
+async function getMovies(){
+  try {
+    const {data} = await axios.get("https://students-api.up.railway.app/movies")
     const arrayHtmlCards = data.map(jstoHtmlCards)
     arrayHtmlCards.forEach((elementHtml)=> cardsContainer.appendChild(elementHtml))
-  })
-  .fail( () => {
+  } catch (error) {
     alert("Error en la API")
     const arrayHtmlCards = tempData.map(jstoHtmlCards)
     arrayHtmlCards.forEach( (elementHtml) => cardsContainer.appendChild(elementHtml))
-  });
- 
+  }
+}
+
+getMovies()
+
+
+
+  
