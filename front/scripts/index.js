@@ -7,7 +7,7 @@ const cardsContainer = document.querySelector("#cardsContainer")
 
 async function getMovies(){
   try {
-    const {data} = await axios.get("https://students-api.up.railway.app/movies")
+    const {data} = await axios.get("http://localhost:3000/movies")
     const arrayHtmlCards = data.map(jstoHtmlCards)
     arrayHtmlCards.forEach((elementHtml)=> cardsContainer.appendChild(elementHtml))
   } catch (error) {
