@@ -8,7 +8,8 @@ const cardsContainer = document.querySelector("#cardsContainer")
 async function getMovies(){
   try {
     const {data} = await axios.get("http://localhost:3000/movies")
-    const arrayHtmlCards = data.map(jstoHtmlCards)
+    const arrayMovies = data.data
+    const arrayHtmlCards = arrayMovies.map(jstoHtmlCards)
     arrayHtmlCards.forEach((elementHtml)=> cardsContainer.appendChild(elementHtml))
   } catch (error) {
     alert("Error en la API")

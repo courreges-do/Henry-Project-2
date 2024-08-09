@@ -11,9 +11,9 @@ function getMoviesController(req, res){
     } else { 
         const respuesta = getMoviesService()
         return res.status(200).json({
-        message: "showing dataBase information",
-        data: dataBase
-    })
+            message: "showing dataBase information",
+            data: respuesta
+        })
     }
 }
 function createMoviesController(req, res){

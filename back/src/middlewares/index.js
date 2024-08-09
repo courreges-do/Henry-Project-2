@@ -1,5 +1,5 @@
 function validatePostMoviesInfo(req, res, next){
-    const fields = ["tile", "year", "director", "duration", "genre", "rate", "poster"]
+    const fields = ["title", "year", "director", "duration", "genre", "rate", "poster"]
     const filterFields = fields.filter((field)=> !req.body[field])
 
     if(filterFields.length > 0){
