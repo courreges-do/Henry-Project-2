@@ -1,21 +1,24 @@
-const { dataBase } = require("../db/dbConfig")
+const { Movie } = require("../models/Movie")
 
-function filterMoviesByTitle(title){
-    const respuesta = dataBase.filter(producto => producto.title === title)
-    return respuesta
+async function filterMoviesById(id){
+    const movie = await Movie.findById(id)
+    return movie
 }
 
-function getMoviesService(){
-    return dataBase
+async function getMoviesService(){
+    const movies = await Movie.find()
+    return movies
 }
 
 function createMoviesService(movie){
-    dataBase.push(movie)
     return "movie created successfully"
 }
 
+
+
+
 module.exports = {
-    filterMoviesByTitle,
+    filterMoviesById,
     getMoviesService,
     createMoviesService
 }

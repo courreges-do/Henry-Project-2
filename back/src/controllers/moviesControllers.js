@@ -1,21 +1,29 @@
-const { filterMoviesByTitle, getMoviesService, createMoviesService } = require("../services/moviesServices")
+const { filterMoviesById, getMoviesService, createMoviesService } = require("../services/moviesServices")
 
-function getMoviesController(req, res){
-    const { title } = req.query
-    if(title){
-        const respuesta = filterMoviesByTitle(title)
+async function getMoviesController(req, res){
+    const { id } = req.query
+    try{
+    if(id){
+        const respuesta = await filterMoviesById(id)
         return res.status(200).json({
             message: "showing dataBase information",
             data: respuesta
         })
     } else { 
-        const respuesta = getMoviesService()
+        const respuesta = await getMoviesService()
         return res.status(200).json({
             message: "showing dataBase information",
             data: respuesta
         })
     }
+ } catch (error){
+    return res.status(400).json({
+        message: "there was an error in the app",
+        error: error.message
+    })
+ }
 }
+
 function createMoviesController(req, res){
     const respuesta = createMoviesService(req.body)
     res.status(200).json({
