@@ -24,12 +24,19 @@ async function getMoviesController(req, res){
  }
 }
 
-function createMoviesController(req, res){
-    const respuesta = createMoviesService(req.body)
+async function createMoviesController(req, res){
+    try{ 
+    const respuesta = await createMoviesService(req.body);
     res.status(200).json({
         message: "movie created successfully",
-        data: respuesta
+        data: respuesta,
+    });
+  } catch (error) {
+    return res.status(400).json({
+        message: "there was an error in the app",
+        error: error.message
     })
+  }
 }
 
 module.exports = {

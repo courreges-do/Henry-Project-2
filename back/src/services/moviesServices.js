@@ -10,8 +10,9 @@ async function getMoviesService(){
     return movies
 }
 
-function createMoviesService(movie){
-    return "movie created successfully"
+async function createMoviesService(movie){
+    const movieCreated = await Movie.create(movie);
+    return movieCreated;
 }
 
 

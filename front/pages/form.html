@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+    <title>Movie Night</title>
+</head>
+<body>
+    <header>
+      <img src="../assets/cinema-logo.jpg" alt="cinema-logo" id="cinema-logo"/>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/facts.html">Fun Facts</a></li>
+            <li><a href="../pages/news.html">Latest News</a></li>
+            <li><a href="#">Create New Movie</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section>
+            <form>
+                <div class="container p-3 mt-4 mb-2 bg-secondary-subtle text-secondary-emphasis rounded">
+                <div class="mb-3">
+                  <label class="form-label fw-bold">Title</label>
+                  <input type="text" class="form-control" id="titleInput" required>
+                </div>
+                <div class="mb-3" id="genreInput">
+                    <label class="form-label d-block fw-bold">Genres</label>
+                    <label class="form-check-label">Action</label>
+                    <input type="checkbox" class="form-check-input" id="actionCheck" value="Action">
+                    <label class="form-check-label">Adventure</label>
+                    <input type="checkbox" class="form-check-input" id="adventureCheck" value="Adventure">
+                    <label class="form-check-label">Comedy</label>
+                    <input type="checkbox" class="form-check-input" id="comedyCheck" value="Comedy">
+                    <label class="form-check-label">Fantasy</label>
+                    <input type="checkbox" class="form-check-input" id="fantasyCheck" value="Fantasy">
+                    <label class="form-check-label">Sci-Fi</label>
+                    <input type="checkbox" class="form-check-input" id="sci-FiCheck" value="Sci-Fi">
+                    <label class="form-check-label">Drama</label>
+                    <input type="checkbox" class="form-check-input" id="dramaCheck" value="Drama">
+                  </div>
+                <div class="row">
+                <div class="mb-3 col">
+                    <label class="form-label fw-bold">Director</label>
+                    <input type="text" class="form-control" id="directorInput" required>
+                  </div>
+                  <div class="mb-3 col">
+                    <label class="form-label fw-bold">Year</label>
+                    <input type="number" class="form-control" id="yearInput" required min="1900" max="2024">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="mb-3 col">
+                    <label class="form-label fw-bold">Rate</label>
+                    <select class="form-select" id="rateInput" required>
+                        <option selected>Select Rate</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                  </div>
+                  <div class="mb-3 col">
+                    <label class="form-label fw-bold">Duration</label>
+                    <input type="text" class="form-control" id="durationInput" required>
+                  </div>
+                </div>
+                  <div class="mb-3">
+                    <label class="form-label fw-bold">Poster</label>
+                    <input type="text" class="form-control" id="posterInput" required>
+                  </div>
+                  <div class="button-container">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+            </div>
+              </form>
+        </section>
+      </main>
+      <script src="../public/bundle.js"></script>
+  </body>
+</html>
