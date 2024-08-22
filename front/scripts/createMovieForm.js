@@ -54,8 +54,6 @@ async function formSubmit() {
 }
 
 
-formReset();
-formSubmit();
 
 
 module.exports = {
