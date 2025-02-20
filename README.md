@@ -47,15 +47,6 @@ npm start
 - MongoDB Atlas account
 - npm or yarn
 
-### Environment Setup
-
-Create `.env` in root directory:
-
-DB_USER=your_mongodb_user
-DB_PASSWORD=your_mongodb_password
-DB_CLUSTER=your_cluster_name
-DB_NAME=your_database_name
-
 ## 🧪 Testing
 
 npm test
